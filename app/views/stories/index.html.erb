@@ -1,7 +1,9 @@
 <h1 class="title">記事リスト</h1>
 
 <% @stories.each do |story| %>
-  <h2 class="title"><%= story.title %></h2>
+  <h2 class="title"><%= story.title %>
+  <%= content_tag :span , '投稿した',class: 'tag is-primary' if story.published? %>
+  </h2>
   <p><%= story.content %></p>
   <p>
      最後編輯時間: <%= time_ago_in_words(story.updated_at) %>
