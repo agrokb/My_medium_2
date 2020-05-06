@@ -25,6 +25,13 @@ class StoriesController < ApplicationController
       render :new
     end  
   end
+ 
+  def destroy
+   @story.destroy
+   redirect_to stories_path, notice: '削除しました'
+  end
+
+
   private
   def story_params
     params.require(:story).permit(:title, :content)
