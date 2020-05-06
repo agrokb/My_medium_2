@@ -47,12 +47,16 @@
     <div class="navbar-end">
       <div class="navbar-item">
         <div class="buttons">
-          <a class="button is-primary">
-            <strong>登録</strong>
+         <% if user_signed_in? %>
+           <%= current_user.email %>
+           <%= link_to  "個人資料修正", edit_user_registration_path	 ,class:"button  is-danger"%>
+           <%= link_to  "ログアウト", destroy_user_session_path ,class:"button  is-light",method:"delete", data: {confirm:'本当にログアウトしましょうか？'}%>
+         <% else %>
+            <%= link_to  "登錄", new_user_registration_path ,class:"button is-light"%>
+            <%= link_to  "ログイン", new_user_session_path	 ,class:"button is-primary"%>        
           </a>
-          <a class="button is-light">
-            ログイン
-          </a>
+         <% end %>
+          
         </div>
       </div>
     </div>
