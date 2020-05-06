@@ -8,7 +8,7 @@
     <%= form.text_area :content,row:10,class: 'textarea' %>
   </div>
   <div class="field">
-    <%= form.submit '保存', class: 'button is-medium is-light' %>
-   <%= form.submit '投稿', class: 'button is-medium is-primary' %>
+    <%= form.submit '保存',name: 'save_as_draft', class: 'button is-medium is-light' %>
+   <%= form.submit '投稿', name: 'publish',class: 'button is-medium is-primary' %>
   </div>
 <% end %>
