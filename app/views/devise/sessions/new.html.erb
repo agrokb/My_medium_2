@@ -1,0 +1,37 @@
+<h2 class="title">ログイン</h2>
+
+<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+   <div class="field">
+   <div class="label">メールアドレス</div>
+    <div class="control">
+     <div class="columns">
+      <div class="column is-three-fifths">
+       <%= f.email_field :email, autofocus: true, autocomplete: "email",class: 'input'%>
+      </div>
+     </div>
+    <div>
+  </div>
+   <div class="field">
+  　<div class="label">パスワード</div>
+    <div class="control">
+     <div class="columns">
+      <div class="is-three-fifths column">
+       <%= f.password_field :password, autocomplete: "new-password",class: 'input' %>
+      </div>
+     </div> 
+    </div>
+  </div>
+
+  <% if devise_mapping.rememberable? %>
+    <div class="field">
+      <%= f.check_box :remember_me %>
+      <%= f.label :remember_me %>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= f.submit "ログイン",class:'button is-primary' %>
+  </div>
+<% end %>
+
+<%= render "devise/shared/links" %>

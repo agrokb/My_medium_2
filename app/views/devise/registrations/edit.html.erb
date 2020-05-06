@@ -1,0 +1,54 @@
+<h2 class="title is-2"> 個人資料更新</h2>
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+  <%= render "devise/shared/error_messages", resource: resource %>
+
+  <div class="field">
+    <label>メール</label>
+    <div class="columns">
+        <div class="control is-two-thirds column">
+          <%= f.email_field :email, autofocus: true,class:"input is-success", autocomplete: "email" %>
+        </div>
+    </div>
+  </div>
+  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+    <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+  <% end %>
+
+  <div class="field">
+    <label>パスワード(更新)</label> <br />
+    <div class="columns">
+        <div class="control is-two-thirds column">
+            <%= f.password_field :password,class:"input is-success", autocomplete: "new-password" %>
+             <% if @minimum_password_length %>
+              <em class="has-text-danger">字数制限<%= @minimum_password_length %>以上 </em>
+            <% end %>
+        </div>
+    </div>
+  </div>
+
+  <div class="field">
+    <label>パスワード(確認)</label> <br />
+    <div class="columns">
+        <div class="control is-two-thirds column">
+          <%= f.password_field :password_confirmation,class:"input is-success", autocomplete: "new-password" %>
+        </div>
+    </div>
+  </div>
+
+  <div class="field">
+    <label>現在のパスワード</label><br />
+    <div class="columns">
+        <div class="control is-two-thirds column">
+          <%= f.password_field :current_password,class:"input is-success", autocomplete: "current-password" %>        
+        </div>
+    </div>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "更新",data: { confirm: "本当に更新しましょうか？" },class: "button is-primary" %>
+  </div>
+  <br>
+<% end %>
+     <h3 class="title is-3"> アカウント削除</h3>
+      <%= button_to "削除", registration_path(resource_name), data: { confirm: "本当に削除しましょうか？" },class: "button is-danger", method: :delete %>
+      <%= button_to "戻る", :back,class:"button is-light" %>
