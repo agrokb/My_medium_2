@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
-
+gem 'friendly_id', '~> 5.1'
+gem 'babosa', '~> 1.0', '>= 1.0.2'
 ruby '2.6.3'
 gem 'aasm', '~> 4.11'
 gem 'devise', '~> 4.2'
