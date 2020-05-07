@@ -4,8 +4,8 @@
 <h2>現在の主な機能：</h2>
 <ul>
 <li>使用者システム:Gem Divise実装して、会員登録、ログインを完成しました。</li>
-<li>画面のデザイン:Bulma実装して、vendorから外部サービスを導入しました。</li>
-<li>記事の個別URLは:idを現れないように、Gem Babosa,Friendly idを実装して特定のURL示します。</li>
+<li>画面のデザイン:Bulma実装して、vendorから外部サービスを導入しました。</li>
+<li>記事の個別URLは:idを現れないように、Gem Babosa,Friendly idを実装して特定のURL示します。</li>
 <li>投稿の状態はデータベースを直接に変更しない、Gem AASM 狀態機を使って、データベースを連動します。</li>
 </ul>
 
