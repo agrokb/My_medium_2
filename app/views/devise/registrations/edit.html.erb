@@ -4,7 +4,7 @@
 
 
 <div class="field">
-    <label>アカウント名</label>
+    <div class="label">アカウント名</div>
     <div class="columns">
         <div class="control is-two-thirds column">
           <%= f.text_field :username,class:"input is-success" %>
@@ -12,8 +12,22 @@
     </div>
 </div>
   <p class="help">例:@larrykic</p>
+  <br />
+<div class="file">
+  <label class="file-label">
+    <%= f.file_field :avatar ,class:"file-input" %>
+    <span class="file-cta">
+      <span class="file-label">
+        写真選んてください
+      </span>
+      <br />
+    </span>
+  </label>
+</div>
+<br />
+<%= image_tag current_user.avatar.variant(resize: '250x250') %>
 <div class="field">
-    <label>自己紹介</label>
+    <div class="label">自己紹介</div>
     <div class="columns">
         <div class="control is-two-thirds column">
           <%= f.text_area :intro,rows: 10,class:"textarea is-success" %>
@@ -21,7 +35,7 @@
     </div>
   </div>
   <div class="field">
-    <label>メール</label>
+    <div class="label">メール</div>
     <div class="columns">
         <div class="control is-two-thirds column">
           <%= f.email_field :email,class:"input is-success", autocomplete: "email" %>
