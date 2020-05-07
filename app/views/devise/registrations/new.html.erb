@@ -2,7 +2,14 @@
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
-
+  <div class="field">
+    <div class="label">アカウント名</div>
+    <div class="columns">
+        <div class="control is-three-fifths column">
+          <%= f.text_field :username,class:"input is-success" %>
+        </div>
+    </div>
+  </div>
   <div class="field">
    <div class="label">メールアドレス</div>
     <div class="control">
@@ -13,12 +20,12 @@
      </div>
     <div>
   </div>
-
   <div class="field">
-  　<div class="label">パスワード</div>
+  　<div class="label">パスワード
     <% if @minimum_password_length %>
      (字数制限<%=@minimum_password_length %>以上)
-    <% end %><br />
+    <% end %>
+    </div>
     <div class="control">
      <div class="columns">
       <div class="is-three-fifths column">
