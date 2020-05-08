@@ -17,6 +17,9 @@ class Story < ApplicationRecord
   def destroy
     update(deleted_at: Time.now)    
   end
+  #Upload Image
+  has_one_attached :cover_image
+
  #instance methods
   def normalize_friendly_id(input)
     input.to_s.to_slug.normalize(transliterations: :russian).to_s
