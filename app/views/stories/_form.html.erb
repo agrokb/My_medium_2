@@ -11,7 +11,7 @@
   </label>
   </div>
   <br />
-  <%= image_tag story.cover_image.variant(combine_options:{resize:"640x640^",crop:"640x640+0+0",gravity: :center}).processed,class:'cover-image' if story.cover_image.attached? %> 
+  <%= image_tag story.cover_image.variant(resize:"350x350^"),class:'cover-image' if story.cover_image.attached? %> 
 
   <div class="field">
     <%= form.label :title, 'タイトル',class:"label" %>
