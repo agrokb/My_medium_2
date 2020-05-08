@@ -12,7 +12,7 @@ class Story < ApplicationRecord
 
   #scopes
   default_scope{ where(deleted_at: nil)}
-
+  #scope :publish_stories, -> { where(status:'published') }
   #soft delete
   def destroy
     update(deleted_at: Time.now)    
