@@ -17,3 +17,4 @@ console.log('Hello World from Webpacker!')
 // const imagePath = (name) => images(name, true)
 
 import "controllers"
+import '../stylesheets'
