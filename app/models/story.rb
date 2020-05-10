@@ -1,4 +1,5 @@
 class Story < ApplicationRecord
+  acts_as_paranoid
   extend FriendlyId
   friendly_id :slug_candidate,use: :slugged
 
@@ -11,12 +12,7 @@ class Story < ApplicationRecord
   belongs_to :user
 
   #scopes
-  default_scope{ where(deleted_at: nil)}
   scope :publish_stories, -> { published.with_attached_cover_image.order(created_at: :desc).includes(:user) }
-  #soft delete
-  def destroy
-    update(deleted_at: Time.now)    
-  end
   #Upload Image
   has_one_attached :cover_image
 
