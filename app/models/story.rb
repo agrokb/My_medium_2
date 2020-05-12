@@ -10,7 +10,7 @@ class Story < ApplicationRecord
 
   #relationship
   belongs_to :user
-
+  has_many :comments
   #scopes
   scope :publish_stories, -> { published.with_attached_cover_image.order(created_at: :desc).includes(:user) }
   #Upload Image
