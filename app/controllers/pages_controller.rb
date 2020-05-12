@@ -4,12 +4,15 @@ class PagesController < ApplicationController
     @stories = Story.publish_stories
   end
   def show
-    @story = Story.friendly.find(params[:story_id])
+    @comment = @story.comments.new
+    @comments = @story.comments.order(id: :desc)
   end
+  
   def user
   end
 
   private
   def find_story
+    @story = Story.friendly.find(params[:story_id])
   end
 end
