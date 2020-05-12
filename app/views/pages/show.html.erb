@@ -20,7 +20,7 @@
     <section>
       <h2>留言</h2>
       <%= render 'comment_area',comment: @comment,story:@story,class:'comment-editor' %>
-      <section class="comments">
+      <section class="comments comment-list">
         <%= render partial:'comment',collection: @comments %>
       </section>
     </section>
