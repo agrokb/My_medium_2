@@ -1,7 +1,6 @@
 class StoriesController < ApplicationController
-  before_action :authenticate_user!,except: [:clap]
+  before_action :authenticate_user!
   before_action :find_story, only: [:edit,:update,:destroy]
-  skip_before_action :verify_authenticity_token, only: [:clap]
   def index
     @stories = current_user.stories.order(created_at: :desc)
   end

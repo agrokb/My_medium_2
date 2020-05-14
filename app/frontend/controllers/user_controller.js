@@ -13,14 +13,14 @@ export default class extends Controller {
         let user = this.followButtonTarget.dataset.user
         let button = this.followButtonTarget
         
-        axios.post(`/users/${user}/follow`)
+        axios.post(`/api/users/${user}/follow`)
             .then(function (response) {
                 let status = response.data.status
                 switch(status){
                     case 'sign_in_first':
                         alert("LOGIN PLEASE")
                         break;
-                    default:
+                                default:
                         button.innerHTML = status    
                 }
                 console.log(response.data.status)
