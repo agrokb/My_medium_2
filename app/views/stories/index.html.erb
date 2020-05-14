@@ -4,7 +4,7 @@
   <h2 class="title"><%= story.title %>
   <%= content_tag :span , '投稿した',class: 'tag is-primary' if story.published? %>
   </h2>
-  <p><%= strip_tags(story.content).truncate(200) %></p>
+  <p><%= truncate(strip_tags(story.content),length:30) %></p>
   <p>
      最後編輯時間: <%= time_ago_in_words(story.updated_at) %>
      <%= link_to "修正",edit_story_path(story),class: 'button is-text is-small'%>
