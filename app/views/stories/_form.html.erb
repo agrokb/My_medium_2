@@ -1,4 +1,9 @@
-<%= form_for(story) do |form| %>
+<% if story.errors.any? %>
+  <div class="notification is-danger">
+    <%= story.errors.full_messages.to_sentence %>
+  </div>
+<% end %>
+<%= form_for(story, html:{class: 'story-editor'}) do |form| %>
   <%= form.label :title, '背景写真',class:"label" %>
   <div class="file">
   <label class="file-label">
@@ -22,7 +27,14 @@
     <%= form.text_area :content,row:10,class: 'textarea' %>
   </div>
   <div class="field">
-    <%= form.submit '保存',name: 'save_as_draft', class: 'button is-medium is-light' %>
-    <%= form.submit '投稿', name: 'publish',class: 'button is-medium is-primary' %>
+    <% if story.published? %>
+     <%= form.submit '更新',name: 'save_as_draft', class: 'button is-medium' %>
+    <% else %>
+     <%= form.submit '儲存草稿',name: 'save_as_draft', class: 'button is-medium' %>
+    <% end %>
+    <%= form.submit '投稿', name: 'publish',class: 'button is-medium is-primary' if story.may_publish? %>
+    <%= form.submit '投稿取り消す', name: 'unpublish',class: 'button is-medium is-danger' if story.may_unpublish? %>
   </div>
 <% end %>
+
+<%= javascript_pack_tag 'editor' %>

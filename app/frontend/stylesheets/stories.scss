@@ -1,8 +1,12 @@
+@import './editor';
 form {
     img.cover-image {
       display: block;
     }
   }
+form.story-editor{
+  margin-bottom:2px;
+}
   .story-content {
     // 作者
     .profile {
