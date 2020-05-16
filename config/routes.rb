@@ -22,6 +22,7 @@ resources :users, only: [] do
   collection do
     get :pricing  #/users/pricing
     get :payment
+    post :pay
   end
 end
 
@@ -37,5 +38,6 @@ end
   get "/demo",to: 'pages#demo'
 
   root 'pages#index'
-  
+
+
 end

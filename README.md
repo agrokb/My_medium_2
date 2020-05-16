@@ -7,6 +7,7 @@
 <li>画面のデザイン:Bulma実装して、vendorから外部サービスを導入しました。</li>
 <li>記事の個別URLは:idを現れないように、Gem Babosa,Friendly idを実装して特定のURL示します。</li>
 <li>投稿の状態はデータベースを直接に変更しない、Gem AASM 狀態機を使って、データベースを連動します。</li>
+<li>PayPal支払実装とGem figaroを使ってキーを設定します。</li>
 </ul>
 
 
