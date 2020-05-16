@@ -7,6 +7,9 @@ gem 'paranoia', '~> 2.4', '>= 2.4.2'
 gem 'mini_magick', '~> 4.10', '>= 4.10.1'
 gem 'aasm', '~> 4.11'
 gem 'devise', '~> 4.2'
+gem 'figaro', '~> 1.2'
+gem "braintree", "~> 2.101.0"
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.2', '>= 6.0.2.2'
 # Use postgresql as the database for Active Record
