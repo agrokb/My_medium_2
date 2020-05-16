@@ -26,6 +26,7 @@
                       <%= link_to  "新規投稿", new_story_path	 ,class:"navbar-item"%>
                       <%= link_to  "投稿リスト", stories_path	 ,class:"navbar-item"%>
                       <%= link_to  "個人資料修正", edit_user_registration_path	 ,class:"navbar-item"%>
+                      <%= link_to  "會員升級", pricing_users_path	 ,class:"navbar-item" unless current_user.paid_user? %>
                       <%= link_to  "ログアウト", destroy_user_session_path ,class:"navbar-item",method:"delete", data: {confirm:'本当にログアウトしましょうか？'}%>
                   </div>
                 </div>
