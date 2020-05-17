@@ -35,9 +35,5 @@ end
   # /@larry/
   get '@:username',to: 'pages#user',as: 'user_page'
 
-  get "/demo",to: 'pages#demo'
-
-  root 'pages#index'
-
-
+  root 'welcome#index'
 end
