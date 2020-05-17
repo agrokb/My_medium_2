@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   devise_for :users, controllers:{
     registrations:'users/registrations'
   }
+root 'welcome#index'
 
 namespace :api do
  post :upload_image, to: 'utils#upload_image'
@@ -35,5 +36,6 @@ end
   # /@larry/
   get '@:username',to: 'pages#user',as: 'user_page'
 
-  root 'welcome#index'
+  get "/demo",to: 'pages#demo'
+
 end
