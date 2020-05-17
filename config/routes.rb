@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   devise_for :users, controllers:{
     registrations:'users/registrations'
   }
-root 'welcome#index'
+root 'pages#index'
 
 namespace :api do
  post :upload_image, to: 'utils#upload_image'
