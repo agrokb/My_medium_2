@@ -81,7 +81,5 @@ test:
 production:
   <<: *default
   database: my_mdeium_2_production
-  username: localhost
-  password:
-  adapter: postgresql
-
+  username: larrychuang 
+  password: <%= ENV['MYAPP_DATABASE_PASSWORD'] %>
