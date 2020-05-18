@@ -81,5 +81,5 @@ test:
 production:
   <<: *default
   database: my_mdeium_2_production
-  username: my_mdeium_2
+  username: larrychuang 
   password: <%= ENV['MY_MDEIUM_2_DATABASE_PASSWORD'] %>

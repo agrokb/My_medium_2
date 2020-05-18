@@ -8,6 +8,7 @@ gem 'mini_magick', '~> 4.10', '>= 4.10.1'
 gem 'aasm', '~> 4.11'
 gem 'devise', '~> 4.2'
 gem 'figaro', '~> 1.2'
+gem 'rails_12factor'
 gem "braintree", "~> 2.101.0"
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.2', '>= 6.0.2.2'
