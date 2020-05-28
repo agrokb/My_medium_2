@@ -19,7 +19,7 @@
           <div class="navbar-item has-dropdown is-hoverable">
                   <a class="navbar-link">
                   
-                    <%= avatar(current_user,size: 50) %>
+                    <%= image_tag url_for(current_user.avatar) %>
                     <%= content_tag :i,"",class:'fas fa-crown has-text-primary' if current_user.vip_user? %>
                     <%= content_tag :i,"",class:'fas fa-crown has-text-danger' if current_user.platinum_user? %>
                     <%= current_user.email %>

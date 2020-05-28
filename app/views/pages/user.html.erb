@@ -1,0 +1,11 @@
+<% @users.each do |u| %>
+ <h1 class="title is-1"> <%= u.username %> </h1>
+  <p class="title is-4">自我紹介</p>
+  <br>
+  <p><%= u.intro %></p>
+  <p class="title is-4">投稿一覧</p>
+  
+  <% u.stories.each do |s| %>     
+   <p> <%=  link_to s.title,story_page_path(u.username,s) %></p>
+  <% end %>
+<% end %>

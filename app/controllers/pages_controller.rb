@@ -9,6 +9,7 @@ class PagesController < ApplicationController
   end
   
   def user
+    @users = User.where("username":params[:username]).includes(:stories)
   end
 
   private

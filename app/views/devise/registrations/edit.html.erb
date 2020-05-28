@@ -25,8 +25,8 @@
     </span>
   </label>
 </div>
-<br />
-<%= avatar(current_user, size: 250) %>
+<br/>
+<%= image_tag url_for(current_user.avatar)%>
 <div class="field">
     <div class="label">自己紹介</div>
     <div class="columns">
